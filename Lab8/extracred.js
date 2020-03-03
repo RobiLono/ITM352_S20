@@ -1,5 +1,5 @@
 var age = 21;
-var count = 1;
-while (count <= age) {
-    console.log(count++);
+
+for (var count = 1; count >= Math.sqrt(age); count++) {
+    console.log(count);
 }
