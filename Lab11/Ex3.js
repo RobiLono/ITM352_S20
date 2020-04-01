@@ -6,13 +6,12 @@ for (i = 0; i < pieces.length; i++) {
 
 pieces.forEach(printIt);
 pieces.forEach ( 
-    function () {console.log( (typeof item == 'string' && item.length > 0)?true:false ));
+    function () {console.log( (typeof item == 'string' && item.length > 0)?true:false));
 
 
-function printIt(item, index) 
+function printIt(item, index) {
 console.log(item, typeof item, isNonNegInt(item, true));
-
-
+}
 function isNonNegInt(q, returnErrors = false) {
     errors = []; // assume no errors at first
     if (Number(q) != q) errors.push('Not a number!'); // Check if string is a number value
