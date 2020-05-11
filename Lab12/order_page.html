@@ -25,6 +25,7 @@
 </head>
 
 <body>
+ 
   <script>
       let params = (new URL(document.location)).searchParams;
   GET = {};
@@ -34,14 +35,14 @@
     qty = GET["quantity_textbox"];
    console.log(qty);
     if (isNonNegInt(qty, false)) {
-      document.write(" Thank for you for ordering " + qty + " things!");
+      document.write(` Thank for you for ordering ${qty} things!`);
       window.stop();
     } else {
-      purchase_button_message.innerHTML = "Please enter a value quantity before purchase"
+    
     }
   }
   </script>
-  <form name="quantity_form" action="order_page.html" method="GET">
+  <form name="quantity_form" action="" method="POST">
     Quanitity desired: <input name="quantity_textbox" type="text" onkeyup="checkQuantityTextbox(quantity_textbox)">
     <span id='qty_textbox_message'>Enter a quantity</span>
     <br>
@@ -51,3 +52,8 @@
 </body>
 
 </html>
+<script>
+ if (typeof GET['quantity_textbox'] != 'undefined') {
+  quantity_form['quantity_textbox'].value = qty;
+ }
+</script>
